@@ -25,7 +25,7 @@
 
                 <div class="header__contacts">
                     <a href="tel:+74999228974" class="header__phone">+7 (499) 922-89-74</a>
-                    <button class="button">заказать звонок</button>
+                    <button data-modal="consultation" class="button">заказать звонок</button>
                 </div>
             </header>
 
@@ -53,7 +53,7 @@
                     </div>
                 </div>
 
-                <button class="button button_main">заказать консультацию</button>
+                <button data-modal="consultation" class="button button_main">заказать консультацию</button>
                 <div class="promo__link">
                     или
                     <a href="#">ПЕРЕЙТИ В КАТАЛОГ</a>
@@ -238,7 +238,7 @@
         </div>
     </section>
 
-    <foooter class="footer">
+    <footer class="footer">
         <div class="footer__map">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2244.4303078892794!2d37.6444210771158!3d55.76839799078955!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54a636edcd2ad%3A0x4c2ca101e2c8c617!2sMyasnitskiy%20Proyezd%2C%204%2F3%2C%20Moskva%2C%20Russia%2C%20107078!5e0!3m2!1sen!2sam!4v1701257134406!5m2!1sen!2sam" width="100%" height="630" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
@@ -258,7 +258,39 @@
                 </a>
             </div>
         </div>
-    </foooter>
+    </footer>
+
+    <div class="overlay">
+        <div class="customModal" id="consultation">
+            <div class="customModal__close">&times;</div>
+            <div class="customModal__subtitle">Просто заполните форму заявки</div>
+            <div class="customModal__descr">и мы перезвоним вам в течении 10 минут</div>
+            <form class="feed-form feed-form_mt25" action="#">
+                <input name="name" required placeholder="Ваше имя" type="text">
+                <input name="phone" required placeholder="Ваш телефон" type="tel">
+                <input name="email" required placeholder="Ваш E-mail" type="email">
+                <button class="button button_submit">заказать консультацию</button>
+            </form>
+        </div>
+
+        <div class="customModal" id="order">
+            <div class="customModal__close">&times;</div>
+            <div class="customModal__subtitle">Ваш заказ:</div>
+            <div class="customModal__descr"></div>
+            <form class="feed-form feed-form_mt25" action="#">
+                <input name="name" required placeholder="Ваше имя" type="text">
+                <input name="phone" required placeholder="Ваш телефон" type="tel">
+                <input name="email" required placeholder="Ваш E-mail" type="email">
+                <button data-modal="order" class="button button_submit">купить</button>
+            </form>
+        </div>
+
+        <div class="customModal customModal_mini" id="thanks">
+            <div class="customModal__close">&times;</div>
+            <div class="customModal__subtitle">Спасибо за вашу заявку!</div>
+            <div class="customModal__descr">Наш менеджер свяжется с вами в ближайшее время!</div>
+        </div>
+    </div>
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>

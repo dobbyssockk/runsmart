@@ -143,13 +143,8 @@ document.addEventListener('DOMContentLoaded', () => {
         };
     }
 
+    //Отрисовка карточек с продуктами
     function renderCatalog(catalogItems) {
-        //Очистка parentSelector
-        // catalogItems.forEach((item) => {
-        //     document.querySelector(item.parentSelector).innerHTML = '';
-        // });
-
-        //Отрисовка карточек с продуктами
         catalogItems.forEach((item) => {
             new CatalogCard(
                 item.image,
@@ -208,5 +203,20 @@ document.addEventListener('DOMContentLoaded', () => {
         details[i].classList.toggle('hide');
         backLinks[i].classList.toggle('hide');
     }
-});
 
+    //Модальные окна
+    $('[data-modal=consultation]').on('click', function () {
+        $('.overlay, #consultation').fadeIn();
+    });
+
+    $('.button_mini').each(function (i) {
+        $(this).on('click', function () {
+           $('#order .customModal__descr').text($('.catalog-item__subtitle').eq(i).text());
+           $('.overlay, #order').fadeIn();
+        });
+    });
+
+    $('.customModal__close').on('click', function() {
+       $('.overlay, #consultation, #order, #thanks').fadeOut();
+    });
+});
