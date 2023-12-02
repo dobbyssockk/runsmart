@@ -219,4 +219,46 @@ document.addEventListener('DOMContentLoaded', () => {
     $('.customModal__close').on('click', function() {
        $('.overlay, #consultation, #order, #thanks').fadeOut();
     });
+
+    function validForm(form) {
+        $(form).validate({
+            rules: {
+                name: {
+                    required: true,
+                    minlength: 2
+                },
+                phone: {
+                    required: true,
+                    customphone: true
+                },
+                email: {
+                    required: true,
+                    email: true
+                }
+            },
+            messages: {
+                name: {
+                    required: 'Пожалуйста, введите свое имя.',
+                    minlength: jQuery.validator.format('Введите {0} символа!')
+                },
+                phone: 'Пожалуйста, введите свой номер телефона.',
+                email: {
+                    required: 'Пожалуйста, введите свою почту.',
+                    email: 'Неправильный формат электронной почты.'
+                }
+            },
+        });
+    }
+
+    validForm('#consultation-form');
+    validForm('#consultation form');
+    validForm('#order form');
+
+    //Проверка ввода номера телефона
+    $.validator.addMethod('customphone', function(value, element) {
+        const phoneNumber = value.replace(/\D/g, '');
+        return phoneNumber.length === 11;
+    });
+
+    $('input[name=phone]').inputmask('+7 (999) 999-99-99');
 });
