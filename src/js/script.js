@@ -291,4 +291,15 @@ document.addEventListener('DOMContentLoaded', () => {
         })
         return false;
     })
+
+    //Появление стрелочки pageup при скролле
+    const pageUp = document.querySelector('.page-up');
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 1600) {
+            pageUp.style.display = 'block';
+        } else {
+            pageUp.style.display = 'none';
+        }
+    })
 });
