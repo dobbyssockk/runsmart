@@ -260,5 +260,35 @@ document.addEventListener('DOMContentLoaded', () => {
         return phoneNumber.length === 11;
     });
 
-    $('input[name=phone]').inputmask('+7 (999) 999-99-99');
+    //Маска ввода номера
+    $('input[name=phone]').inputmask('+374 (99) 999-999');
+
+    //Отправка данных при нажатии кнопки в формах
+    $('form').submit(function (e) {
+        e.preventDefault();
+
+        if (!$(this).valid()) {
+            return;
+        }
+
+        const formData = {};
+
+        $(this).serializeArray().forEach(function(item) {
+            formData[item.name] = item.value;
+            console.log(item);
+        });
+
+        $.ajax({
+            type: 'POST',
+            url: 'http://localhost:8080/send-email',
+            contentType: 'application/json',
+            data: JSON.stringify(formData)
+        }).done(function () {
+            $(this).find('input').val('');
+            $('#consultation, #order').fadeOut();
+            $('.overlay, #thanks').fadeIn('slow');
+            $('form').trigger('reset');
+        })
+        return false;
+    })
 });
