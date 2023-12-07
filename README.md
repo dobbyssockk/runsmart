@@ -7,6 +7,7 @@ This landing page showcases my web development skills, featuring responsive desi
 The landing page is currently live and can be accessed at the following URL: https://dobbyssockk.github.io/.
 
 ## Project Structure  
+- `dist/`: Contains the distribution files that are ready for deployment to the production environment.
 - `src/`: Source code of the project.
   - `css/`: Contains compiled CSS files including third-party libraries like Bootstrap and Slick, and custom styles.
   - `fonts/`: Holds font files used across the project.
