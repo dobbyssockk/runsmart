@@ -29,63 +29,63 @@ document.addEventListener('DOMContentLoaded', () => {
     // Array with catalog items
     const fitnessProducts = [
         {
-            image: 'img/catalog/card_pic.png',
+            image: 'src/img/catalog/card_pic.png',
             name: 'Polar FT1',
             oldPrice: 51.34,
             price: 48.63,
             parentSelector: '.catalog__fitness'
         },
         {
-            image: 'img/catalog/card_pic.png',
+            image: 'src/img/catalog/card_pic.png',
             name: 'Suunto M2',
             oldPrice: 72.30,
             price: 71.77,
             parentSelector: '.catalog__fitness'
         },
         {
-            image: 'img/catalog/card_pic.png',
+            image: 'src/img/catalog/card_pic.png',
             name: 'Polar FT4',
             oldPrice: 79.87,
             price: 75.88,
             parentSelector: '.catalog__fitness'
         },
         {
-            image: 'img/catalog/card_pic.png',
+            image: 'src/img/catalog/card_pic.png',
             name: 'Polar FT1',
             oldPrice: 51.34,
             price: 48.63,
             parentSelector: '.catalog__fitness'
         },
         {
-            image: 'img/catalog/card_pic.png',
+            image: 'src/img/catalog/card_pic.png',
             name: 'Suunto M2',
             oldPrice: 72.30,
             price: 71.77,
             parentSelector: '.catalog__fitness'
         },
         {
-            image: 'img/catalog/card_pic.png',
+            image: 'src/img/catalog/card_pic.png',
             name: 'Polar FT4',
             oldPrice: 79.87,
             price: 75.88,
             parentSelector: '.catalog__fitness'
         },
         {
-            image: 'img/catalog/card_pic.png',
+            image: 'src/img/catalog/card_pic.png',
             name: 'Polar FT1',
             oldPrice: 51.34,
             price: 48.63,
             parentSelector: '.catalog__fitness'
         },
         {
-            image: 'img/catalog/card_pic.png',
+            image: 'src/img/catalog/card_pic.png',
             name: 'Suunto M2',
             oldPrice: 72.30,
             price: 71.77,
             parentSelector: '.catalog__fitness'
         },
         {
-            image: 'img/catalog/card_pic.png',
+            image: 'src/img/catalog/card_pic.png',
             name: 'Polar FT4',
             oldPrice: 79.87,
             price: 75.88,
@@ -95,42 +95,42 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const runningProducts = [
         {
-            image: 'img/catalog/card_pic.png',
+            image: 'src/img/catalog/card_pic.png',
             name: 'Polar FT1',
             oldPrice: 51.34,
             price: 48.63,
             parentSelector: '.catalog__running'
         },
         {
-            image: 'img/catalog/card_pic.png',
+            image: 'src/img/catalog/card_pic.png',
             name: 'Suunto M2',
             oldPrice: 72.30,
             price: 71.77,
             parentSelector: '.catalog__running'
         },
         {
-            image: 'img/catalog/card_pic.png',
+            image: 'src/img/catalog/card_pic.png',
             name: 'Polar FT4',
             oldPrice: 79.87,
             price: 75.88,
             parentSelector: '.catalog__running'
         },
         {
-            image: 'img/catalog/card_pic.png',
+            image: 'src/img/catalog/card_pic.png',
             name: 'Polar FT1',
             oldPrice: 51.34,
             price: 48.63,
             parentSelector: '.catalog__running'
         },
         {
-            image: 'img/catalog/card_pic.png',
+            image: 'src/img/catalog/card_pic.png',
             name: 'Suunto M2',
             oldPrice: 72.30,
             price: 71.77,
             parentSelector: '.catalog__running'
         },
         {
-            image: 'img/catalog/card_pic.png',
+            image: 'src/img/catalog/card_pic.png',
             name: 'Polar FT4',
             oldPrice: 79.87,
             price: 75.88,
@@ -140,21 +140,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const triathlonProducts = [
         {
-            image: 'img/catalog/card_pic.png',
+            image: 'src/img/catalog/card_pic.png',
             name: 'Polar FT1',
             oldPrice: 51.34,
             price: 48.63,
             parentSelector: '.catalog__triathlon'
         },
         {
-            image: 'img/catalog/card_pic.png',
+            image: 'src/img/catalog/card_pic.png',
             name: 'Suunto M2',
             oldPrice: 72.30,
             price: 71.77,
             parentSelector: '.catalog__triathlon'
         },
         {
-            image: 'img/catalog/card_pic.png',
+            image: 'src/img/catalog/card_pic.png',
             name: 'Polar FT4',
             oldPrice: 79.87,
             price: 75.88,
