@@ -3,6 +3,9 @@
 ## Description  
 This landing page showcases my web development skills, featuring responsive design, CSS preprocessing with SASS, and the use of JavaScript libraries. The site is accessible in multiple languages, specifically English, Armenian, Ukrainian, and Russian, demonstrating a commitment to internationalization and making the content available to a diverse audience.
 
+## Access
+The landing page is currently live and can be accessed at the following URL: https://dobbyssockk.github.io/.
+
 ## Project Structure  
 - `dist/`: Contains the distribution files that are ready for deployment to the production environment.
 - `src/`: Source code of the project.
