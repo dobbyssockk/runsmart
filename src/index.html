@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>RunSmart</title>
     <link rel="shortcut icon" href="icons/smart-watch.png" type="image/x-icon">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="css/style.min.css">
 </head>
 <body>
@@ -112,7 +112,7 @@
                 and we will call you back within 10 minutes
             </div>
 
-            <form id="consultation-form" class="feed-form" action="#">
+            <form id="consultation-form" class="feed-form consultation-form" action="#">
                 <input name="name" placeholder="Your name" type="text">
                 <input name="phone" placeholder="Your phone" type="tel">
                 <input name="email" placeholder="Your E-mail" type="email">
@@ -121,7 +121,7 @@
         </div>
     </section>
 
-    <section class="carousel-section">
+    <div class="carousel-section">
         <div class="container">
             <div id="carousel-section__wrapper" class="carousel carousel-dark slide">
                 <div class="carousel-indicators">
@@ -150,7 +150,7 @@
                 </button>
             </div>
         </div>
-    </section>
+    </div>
 
     <section id="catalog" class="catalog">
         <div class="container">
@@ -173,7 +173,7 @@
             <h2 class="title" data-i18n="reviews.title">Customer Reviews</h2>
 
             <div class="reviews__wrapper">
-                <div class="reviews__item">
+                <div class="reviews__item animate__animated animate__fadeInUp wow" data-wow-duration="2s">
                     <!-- Review 1 -->
                     <div class="reviews__image">
                         <img src="img/reviews/photo_1.png" alt="review image">
@@ -182,16 +182,16 @@
                         <div class="reviews__subtitle" data-i18n="review1.name">Emily Smith</div>
                         <div class="reviews__marathons" data-i18n="review1.marathons">2 half-marathons</div>
                         <div class="reviews__descr" data-i18n="review1.descr">
-                            I didn't know what to buy, so I turned to the guys from <span></span> - they picked a heart rate monitor that fit my goals and financial possibilities. Later, I decided to update my gadget and went straight back to them.
+                            I didn't know what to buy, so I turned to the guys from Runsmart - they picked a heart rate monitor that fit my goals and financial possibilities. Later, I decided to update my gadget and went straight back to them.
 
                             New goals - a new gadget!
 
-                            Thank you, <span>RunSmart</span>!
+                            Thank you, RunSmart!
                         </div>
                     </div>
                 </div>
 
-                <div class="reviews__item">
+                <div class="reviews__item animate__animated animate__fadeInUp wow" data-wow-duration="2s">
                     <!-- Review 2 -->
                     <div class="reviews__image">
                         <img src="img/reviews/photo_2.png" alt="review image">
@@ -210,7 +210,7 @@
                     </div>
                 </div>
 
-                <div class="reviews__item">
+                <div class="reviews__item animate__animated animate__fadeInUp wow" data-wow-duration="2s">
                     <!-- Review 3 -->
                     <div class="reviews__image">
                         <img src="img/reviews/photo_3.png" alt="review image">
@@ -219,7 +219,7 @@
                         <div class="reviews__subtitle" data-i18n="review3.name">Charlotte Johnson</div>
                         <div class="reviews__marathons" data-i18n="review3.marathons">2 half-marathons</div>
                         <div class="reviews__descr" data-i18n="review3.descr">
-                            I couldn't start running for a long time because I would begin but then it became hard and I gave up. Heard about <span>RunSmart</span> and pulse control running from friends and decided to try.
+                            I couldn't start running for a long time because I would begin but then it became hard and I gave up. Heard about RunSmart and pulse control running from friends and decided to try.
 
                             I called them, they were interested in my goals and picked a very interesting option with a discount! Now I run and enjoy it! I've already run 2 half-marathons and several shorter races and don't plan to stop.
 
@@ -233,7 +233,7 @@
 
     <footer class="footer">
         <div class="footer__map">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1603638.6423002454!2d-93.46425991952285!3d38.277018842911446!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87c0e6d54822e37d%3A0xb55bc4590466bd72!2sMissouri%2C%20USA!5e0!3m2!1sen!2sam!4v1701873395051!5m2!1sen!2sam" width="100%" height="630" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1603638.6423002454!2d-93.46425991952285!3d38.277018842911446!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87c0e6d54822e37d%3A0xb55bc4590466bd72!2sMissouri%2C%20USA!5e0!3m2!1sen!2sam!4v1701873395051!5m2!1sen!2sam" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
 
         <div class="footer__info">
@@ -258,7 +258,7 @@
             <div class="customModal__close">&times;</div>
             <div class="customModal__subtitle" data-i18n="modal.consultation_subtitle">Just fill out the application form</div>
             <div class="customModal__descr" data-i18n="modal.consultation_description">and we will call you back within 10 minutes</div>
-            <form class="feed-form feed-form_mt25" action="#">
+            <form class="feed-form feed-form_mt25 consultation-form" action="#">
                 <input name="name" placeholder="Your name" type="text">
                 <input name="phone" placeholder="Your phone" type="tel">
                 <input name="email" placeholder="Your E-mail" type="email">
@@ -270,7 +270,7 @@
             <div class="customModal__close">&times;</div>
             <div class="customModal__subtitle" data-i18n="modal.order_subtitle">Your order:</div>
             <div class="customModal__descr"></div>
-            <form class="feed-form feed-form_mt25" action="#">
+            <form id="purchase-form" class="feed-form feed-form_mt25" action="#">
                 <input name="name" placeholder="Your name" type="text">
                 <input name="phone" placeholder="Your phone" type="tel">
                 <input name="email" placeholder="Your E-mail" type="email">
@@ -289,11 +289,12 @@
         <img src="icons/circle-up.svg" alt="up">
     </a>
 
-    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.validate.min.js"></script>
     <script src="js/jquery.inputmask.min.js"></script>
+    <script src="js/wow.min.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>

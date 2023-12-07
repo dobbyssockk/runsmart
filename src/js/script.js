@@ -69,10 +69,52 @@ document.addEventListener('DOMContentLoaded', () => {
             oldPrice: 79.87,
             price: 75.88,
             parentSelector: '.catalog__fitness'
+        },
+        {
+            image: 'img/catalog/card_pic.png',
+            name: 'Polar FT1',
+            oldPrice: 51.34,
+            price: 48.63,
+            parentSelector: '.catalog__fitness'
+        },
+        {
+            image: 'img/catalog/card_pic.png',
+            name: 'Suunto M2',
+            oldPrice: 72.30,
+            price: 71.77,
+            parentSelector: '.catalog__fitness'
+        },
+        {
+            image: 'img/catalog/card_pic.png',
+            name: 'Polar FT4',
+            oldPrice: 79.87,
+            price: 75.88,
+            parentSelector: '.catalog__fitness'
         }
     ];
 
     const runningProducts = [
+        {
+            image: 'img/catalog/card_pic.png',
+            name: 'Polar FT1',
+            oldPrice: 51.34,
+            price: 48.63,
+            parentSelector: '.catalog__running'
+        },
+        {
+            image: 'img/catalog/card_pic.png',
+            name: 'Suunto M2',
+            oldPrice: 72.30,
+            price: 71.77,
+            parentSelector: '.catalog__running'
+        },
+        {
+            image: 'img/catalog/card_pic.png',
+            name: 'Polar FT4',
+            oldPrice: 79.87,
+            price: 75.88,
+            parentSelector: '.catalog__running'
+        },
         {
             image: 'img/catalog/card_pic.png',
             name: 'Polar FT1',
@@ -110,6 +152,13 @@ document.addEventListener('DOMContentLoaded', () => {
             oldPrice: 72.30,
             price: 71.77,
             parentSelector: '.catalog__triathlon'
+        },
+        {
+            image: 'img/catalog/card_pic.png',
+            name: 'Polar FT4',
+            oldPrice: 79.87,
+            price: 75.88,
+            parentSelector: '.catalog__triathlon'
         }
     ];
 
@@ -126,8 +175,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         render() {
             const catalogItem = document.createElement('div');
-            this.elementClass = 'catalog-item';
-            catalogItem.classList.add(this.elementClass);
+            catalogItem.classList.add('catalog-item', 'animate__animated', 'animate__fadeInRight');
 
             catalogItem.innerHTML = `
                 <div class="catalog-item__content">
@@ -142,7 +190,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <li class="catalog-item__detail" data-i18n="catalog.detail2">You will see an informative graphic indicator of the target training pulse zones;</li>
                     <li class="catalog-item__detail" data-i18n="catalog.detail3">Also, you will see information about the calories burned during the training;</li>
                     <li class="catalog-item__detail" data-i18n="catalog.detail4">You can view data for 10 training sessions.</li>
-                    <a href="#" class="catalog-item__back-link hide" data-i18n="catalog.back">BACK</a>
+                    <li class="catalog-item__back-link hide"><a href="#" data-i18n="catalog.back">BACK</a></li>
                 </ul>
                 
                 <hr>
@@ -280,7 +328,7 @@ document.addEventListener('DOMContentLoaded', () => {
     $('input[name=phone]').inputmask('+1 (999) 999-9999');
 
     // Form data submitting
-    $('form').submit(function (e) {
+    $('form.consultation-form').submit(function (e) {
         e.preventDefault();
 
         if (!$(this).valid()) {
@@ -296,7 +344,35 @@ document.addEventListener('DOMContentLoaded', () => {
 
         $.ajax({
             type: 'POST',
-            url: 'http://localhost:8080/send-email',
+            url: 'http://localhost:8080/send-email-consultation',
+            contentType: 'application/json',
+            data: JSON.stringify(formData)
+        }).done(function () {
+            $(this).find('input').val('');
+            $('#consultation, #order').fadeOut();
+            $('.overlay, #thanks').fadeIn('slow');
+            $('form').trigger('reset');
+        })
+        return false;
+    })
+
+    $('form#purchase-form').submit(function (e) {
+        e.preventDefault();
+
+        if (!$(this).valid()) {
+            return;
+        }
+
+        const formData = {};
+
+        $(this).serializeArray().forEach(function(item) {
+            formData[item.name] = item.value;
+            console.log(item);
+        });
+
+        $.ajax({
+            type: 'POST',
+            url: 'http://localhost:8080/send-email-purchase',
             contentType: 'application/json',
             data: JSON.stringify(formData)
         }).done(function () {
@@ -318,4 +394,7 @@ document.addEventListener('DOMContentLoaded', () => {
             pageUp.style.display = 'none';
         }
     })
+
+    // Animate when scroll
+    new WOW().init();
 });
