@@ -26,14 +26,17 @@ app.post('/send-email', async (req, res) => {
         await transport.sendMail({
             from: "no-reply@pulse.com",
             to: "receiver@sender.com",
-            subject: "Данные",
+            subject: "Application confirmation from Pulse",
             html: `
-            <h1>Приветствуем, ${body.name}!</h1>
-            <p>Спасибо за заявку, мы свяжемся с Вами в течение 24 часов!</p>
-            <p>Предоставленные Вами данные:</p>
-            <p>Имя: ${body.name}</p>
-            <p>Телефон: ${body.phone}</p>
-            <p>E-mail: ${body.email}</p>
+            <h1>Welcome, ${body.name}!</h1>
+            <p>Thank you for reaching out to us. We will ensure that our specialist contacts you within the next 10 minutes.</p>
+            <p>For your convenience, we are repeating the information you provided:</p>
+            <ul>
+                <li><strong>Name:</strong> ${body.name}</li>
+                <li><strong>Phone:</strong> ${body.phone}</li>
+                <li><strong>E-mail:</strong> ${body.email}</li>
+            </ul>
+            <p>We look forward to the opportunity to assist you!</p>
             `
         });
         res.send('Okay');

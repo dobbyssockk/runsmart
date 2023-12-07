@@ -1,53 +1,73 @@
 'use strict';
 document.addEventListener('DOMContentLoaded', () => {
-    //Массив с объектами товаров каталога
+    // Translation
+    function loadLanguage(lang) {
+        $.getJSON(`../../translations/${lang}.json`, function(translations) {
+            applyTranslations(translations);
+        }).fail(function() {
+            console.error("Error loading the language file.");
+        });
+    }
+
+    function applyTranslations(translations) {
+        $('[data-i18n]').each(function() {
+            const key = $(this).data('i18n');
+            if (translations[key]) {
+                $(this).text(translations[key]);
+            }
+        });
+    }
+
+    $(document).ready(function() {
+        loadLanguage('en'); // Default language
+
+        $('#languageSwitcher').change(function() {
+            loadLanguage(this.value);
+        });
+    });
+
+    // Array with catalog items
     const fitnessProducts = [
         {
             image: 'img/catalog/card_pic.png',
             name: 'Polar FT1',
-            descr: 'Для первых шагов в тренировках, основанных на сердечном ритме',
-            oldPrice: 4750,
-            price: 4500,
+            oldPrice: 51.34,
+            price: 48.63,
             parentSelector: '.catalog__fitness'
         },
         {
             image: 'img/catalog/card_pic.png',
             name: 'Suunto M2',
-            descr: 'Для первых шагов в тренировках, основанных на сердечном ритме',
-            oldPrice: 6690,
-            price: 6641,
+            oldPrice: 72.30,
+            price: 71.77,
             parentSelector: '.catalog__fitness'
         },
         {
             image: 'img/catalog/card_pic.png',
             name: 'Polar FT4',
-            descr: 'Для первых шагов в тренировках, основанных на сердечном ритме',
-            oldPrice: 7390,
-            price: 7021,
+            oldPrice: 79.87,
+            price: 75.88,
             parentSelector: '.catalog__fitness'
         },
         {
             image: 'img/catalog/card_pic.png',
             name: 'Polar FT1',
-            descr: 'Для первых шагов в тренировках, основанных на сердечном ритме',
-            oldPrice: 4750,
-            price: 4500,
+            oldPrice: 51.34,
+            price: 48.63,
             parentSelector: '.catalog__fitness'
         },
         {
             image: 'img/catalog/card_pic.png',
             name: 'Suunto M2',
-            descr: 'Для первых шагов в тренировках, основанных на сердечном ритме',
-            oldPrice: 6690,
-            price: 6641,
+            oldPrice: 72.30,
+            price: 71.77,
             parentSelector: '.catalog__fitness'
         },
         {
             image: 'img/catalog/card_pic.png',
             name: 'Polar FT4',
-            descr: 'Для первых шагов в тренировках, основанных на сердечном ритме',
-            oldPrice: 7390,
-            price: 7021,
+            oldPrice: 79.87,
+            price: 75.88,
             parentSelector: '.catalog__fitness'
         }
     ];
@@ -56,25 +76,22 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             image: 'img/catalog/card_pic.png',
             name: 'Polar FT1',
-            descr: 'Для первых шагов в тренировках, основанных на сердечном ритме',
-            oldPrice: 4750,
-            price: 4500,
+            oldPrice: 51.34,
+            price: 48.63,
             parentSelector: '.catalog__running'
         },
         {
             image: 'img/catalog/card_pic.png',
             name: 'Suunto M2',
-            descr: 'Для первых шагов в тренировках, основанных на сердечном ритме',
-            oldPrice: 6690,
-            price: 6641,
+            oldPrice: 72.30,
+            price: 71.77,
             parentSelector: '.catalog__running'
         },
         {
             image: 'img/catalog/card_pic.png',
             name: 'Polar FT4',
-            descr: 'Для первых шагов в тренировках, основанных на сердечном ритме',
-            oldPrice: 7390,
-            price: 7021,
+            oldPrice: 79.87,
+            price: 75.88,
             parentSelector: '.catalog__running'
         }
     ];
@@ -83,22 +100,20 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             image: 'img/catalog/card_pic.png',
             name: 'Polar FT1',
-            descr: 'Для первых шагов в тренировках, основанных на сердечном ритме',
-            oldPrice: 4750,
-            price: 4500,
+            oldPrice: 51.34,
+            price: 48.63,
             parentSelector: '.catalog__triathlon'
         },
         {
             image: 'img/catalog/card_pic.png',
             name: 'Suunto M2',
-            descr: 'Для первых шагов в тренировках, основанных на сердечном ритме',
-            oldPrice: 6690,
-            price: 6641,
+            oldPrice: 72.30,
+            price: 71.77,
             parentSelector: '.catalog__triathlon'
         }
     ];
 
-    //Классы для отрисовки карточек с продуктами
+    // Class for rendering catalog cards
     class CatalogCard {
         constructor(image, name, descr, oldPrice, price, parentSelector) {
             this.image = image;
@@ -113,37 +128,38 @@ document.addEventListener('DOMContentLoaded', () => {
             const catalogItem = document.createElement('div');
             this.elementClass = 'catalog-item';
             catalogItem.classList.add(this.elementClass);
+
             catalogItem.innerHTML = `
                 <div class="catalog-item__content">
-                    <img src="${this.image}" alt="pulsometr ${this.name}"  class="catalog-item__image">
-                    <div class="catalog-item__subtitle">Пульсометр ${this.name}</div>
-                    <div class="catalog-item__descr">${this.descr}</div>
-                    <a href="#" class="catalog-item__link">ПОДРОБНЕЕ</a>
+                    <img src="${this.image}" alt="pulsometer ${this.name}" class="catalog-item__image">
+                    <div class="catalog-item__subtitle" data-i18n="catalog.item_title">${this.name}</div>
+                    <div class="catalog-item__descr" data-i18n="catalog.item_description"> For the first steps in heart rate-based training</div>
+                    <a href="#" class="catalog-item__link" data-i18n="catalog.more_details">MORE DETAILS</a>
                 </div>
                 
                 <ul class="catalog-item__details hide">
-                    <li class="catalog-item__detail">Вы услышите звуковое оповещение о нужном пульсе во время тренировки;</li>
-                    <li class="catalog-item__detail">Вы увидите информативный графический индикатор целевых тренировочных зон пульса;</li>
-                    <li class="catalog-item__detail">Также Вы увидите информацию о расходе калорий за тренировку;</li>
-                    <li class="catalog-item__detail">Вы сможете посмотреть данные по 10 тренировкам.</li>
-                    <a href="#" class="catalog-item__back-link hide">НАЗАД</a>
+                    <li class="catalog-item__detail" data-i18n="catalog.detail1">You will hear an audible alert for the required pulse during training;</li>
+                    <li class="catalog-item__detail" data-i18n="catalog.detail2">You will see an informative graphic indicator of the target training pulse zones;</li>
+                    <li class="catalog-item__detail" data-i18n="catalog.detail3">Also, you will see information about the calories burned during the training;</li>
+                    <li class="catalog-item__detail" data-i18n="catalog.detail4">You can view data for 10 training sessions.</li>
+                    <a href="#" class="catalog-item__back-link hide" data-i18n="catalog.back">BACK</a>
                 </ul>
                 
                 <hr>
-        
+                
                 <div class="catalog-item__footer">
                     <div class="catalog-item__prices">
-                        <div class="catalog-item__old-price">${this.oldPrice} руб.</div>
-                        <div class="catalog-item__price">${this.price} руб.</div>
+                        <div class="catalog-item__old-price">$${this.oldPrice}</div>
+                        <div class="catalog-item__price">$${this.price}</div>
                     </div>
-                    <button class="button button_mini">КУПИТЬ</button>
+                    <button class="button button_mini" data-i18n="catalog.buy_button">BUY</button>
                 </div>
             `;
             this.parentSelector.append(catalogItem);
         };
     }
 
-    //Отрисовка карточек с продуктами
+    // Rendering catalog items
     function renderCatalog(catalogItems) {
         catalogItems.forEach((item) => {
             new CatalogCard(
@@ -177,7 +193,7 @@ document.addEventListener('DOMContentLoaded', () => {
         })
     })
 
-    //Показ деталей при нажатии "Подробнее" и обратное при нажатии "Назад"
+    // Showing more details and going back
     const links = document.querySelectorAll('.catalog-item__link');
     const contents = document.querySelectorAll('.catalog-item__content');
     const details = document.querySelectorAll('.catalog-item__details');
@@ -204,7 +220,7 @@ document.addEventListener('DOMContentLoaded', () => {
         backLinks[i].classList.toggle('hide');
     }
 
-    //Модальные окна
+    // Modal windows
     $('[data-modal=consultation]').on('click', function () {
         $('.overlay, #consultation').fadeIn();
     });
@@ -254,16 +270,16 @@ document.addEventListener('DOMContentLoaded', () => {
     validForm('#consultation form');
     validForm('#order form');
 
-    //Проверка ввода номера телефона
+    // Checking phone number
     $.validator.addMethod('customphone', function(value, element) {
         const phoneNumber = value.replace(/\D/g, '');
         return phoneNumber.length === 11;
     });
 
-    //Маска ввода номера
-    $('input[name=phone]').inputmask('+374 (99) 999-999');
+    // Input mask for phone number
+    $('input[name=phone]').inputmask('+1 (999) 999-9999');
 
-    //Отправка данных при нажатии кнопки в формах
+    // Form data submitting
     $('form').submit(function (e) {
         e.preventDefault();
 
@@ -292,7 +308,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return false;
     })
 
-    //Появление стрелочки pageup при скролле
+    // Page up button
     const pageUp = document.querySelector('.page-up');
 
     window.addEventListener('scroll', () => {

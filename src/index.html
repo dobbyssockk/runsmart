@@ -6,6 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>RunSmart</title>
+    <link rel="shortcut icon" href="icons/smart-watch.png" type="image/x-icon">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/font.css">
     <link rel="stylesheet" href="css/style.min.css">
@@ -18,45 +19,50 @@
                     <img src="icons/main/logo.svg" alt="logo">
                 </div>
 
-                <div class="header__official">
-                    Официальный представитель
-                    <span>Garmin, Polar, Suunto</span>
+                <div class="header__wrapper">
+                    <span class="header__official" data-i18n="header.official">Official representative</span>
+                    <span class="header__brands" data-i18n="header.brands">Garmin, Polar, Suunto</span>
                 </div>
 
                 <div class="header__contacts">
-                    <a href="tel:+74999228974" class="header__phone">+7 (499) 922-89-74</a>
-                    <button data-modal="consultation" class="button">заказать звонок</button>
+                    <a href="tel:+14173333333" class="header__phone">+1 (417) 333-3333</a>
+                    <button data-modal="consultation" class="button" data-i18n="header.order_call">Request a call</button>
+                </div>
+                <div>
+                    <select id="languageSwitcher">
+                        <option value="en">English</option>
+                        <option value="am">Armenian</option>
+                        <option value="ua">Ukrainian</option>
+                        <option value="ru">Russian</option>
+                    </select>
                 </div>
             </header>
 
             <div class="promo__wrapper">
-                    <h1 class="promo__header">Подбор пульсометра</h1>
-                    <h2 class="promo__subheader">с учётом Вашего уровня подготовки</h2>
+                <h1 class="promo__header" data-i18n="promo.title">Choosing a heart rate monitor</h1>
+                <h2 class="promo__subheader" data-i18n="promo.subtitle">Considering your training level</h2>
 
                 <div class="promo__icons">
                     <div class="promo__icon">
                         <img src="icons/main/timer.svg" alt="timer">
-                        Время подбора:
-                        10 минут
+                        <span data-i18n="promo.selection_time">Selection time: 10 minutes</span>
                     </div>
 
                     <div class="promo__icon">
                         <img src="icons/main/cart.svg" alt="cart">
-                        Бесплатная
-                        доставка
+                        <span data-i18n="promo.free_delivery">Free delivery</span>
                     </div>
 
                     <div class="promo__icon">
                         <img src="icons/main/messages.svg" alt="messages">
-                        Ответим
-                        на все вопросы
+                        <span data-i18n="promo.answer_questions">We will answer all your questions</span>
                     </div>
                 </div>
 
-                <button data-modal="consultation" class="button button_main">заказать консультацию</button>
+                <button data-modal="consultation" class="button button_main" data-i18n="promo.order_consultation">Request a consultation</button>
                 <div class="promo__link">
-                    или
-                    <a href="#">ПЕРЕЙТИ В КАТАЛОГ</a>
+                    <span data-i18n="promo.link">or</span>
+                    <a href="#catalog" data-i18n="promo.go_to_catalog">GO TO CATALOG</a>
                 </div>
             </div>
         </div>
@@ -64,33 +70,30 @@
 
     <section class="advantages">
         <div class="container">
-            <h2 class="title">НАШИ ПРЕИМУЩЕСТВА</h2>
+            <h2 class="title" data-i18n="advantages.title">OUR ADVANTAGES</h2>
 
             <div class="advantages__wrapper">
                 <div class="advantages__item">
                     <div class="advantages__icon"><img src="icons/advantages/cup.svg" alt="cup"></div>
-                    <p class="advantages__subtitle">Делимся опытом</p>
-                    <p class="advantages__descr">
-                        Наши сотрудники всегда готовы поделиться своим опытом, так как сами бегают полумарафоны, переплыли Босфор, готовятся к соревнованиям по триатлону!
+                    <p class="advantages__subtitle" data-i18n="advantages.experience_title">Sharing experience</p>
+                    <p class="advantages__descr" data-i18n="advantages.experience_description">
+                        Our employees are always ready to share their experience, as they run half-marathons, have swum across the Bosphorus, and are preparing for triathlon competitions!
                     </p>
                 </div>
 
                 <div class="advantages__item">
-                    <div class="advantages__icon"><img src="icons/advantages/heart.svg" alt="heart"></div>
-                    <p class="advantages__subtitle">Заботимся о здоровье</p>
-                    <p class="advantages__descr">
-                        Мы работаем для того, чтобы Ваши занятия спортом шли на пользу Вашему здоровью и были в радость Вам и Вашим близким!
+                    <div class="advantages__icon advantages__icon_animated"><img src="icons/advantages/heart.svg" alt="heart"></div>
+                    <p class="advantages__subtitle" data-i18n="advantages.health_title">Caring for health</p>
+                    <p class="advantages__descr" data-i18n="advantages.health_description">
+                        We work to ensure your sports activities benefit your health and bring joy to you and your loved ones!
                     </p>
                 </div>
 
                 <div class="advantages__item">
                     <div class="advantages__icon"><img src="icons/advantages/shoe.svg" alt="shoe"></div>
-                    <p class="advantages__subtitle">Учим бегать</p>
-                    <p class="advantages__descr">
-                        Помогаем с обучением правильной технике бега!
-                        <br>
-                        Дружим с крупнейшей школой бега в России -
-                        <a href="#">I LOVE RUNNING.</a>
+                    <p class="advantages__subtitle" data-i18n="advantages.running_title">Teaching running</p>
+                    <p class="advantages__descr" data-i18n="advantages.running_description">
+                        We help with training in the right running technique! We are friends with the largest running school - <a href="#" data-i18n="advantages.running_school">I LOVE RUNNING.</a>
                     </p>
                 </div>
             </div>
@@ -99,21 +102,21 @@
 
     <section class="consultation">
         <div class="container">
-            <h2 class="title title_left">
-                Получите бесплатную консультацию<br>
-                по подбору пульсометра
+            <h2 class="title title_left" data-i18n="consultation.title">
+                Get a Free Consultation
+                for Choosing a Heart Rate Monitor
             </h2>
 
-            <div class="consultation__descr">
-                Просто заполните форму заявки<br>
-                и мы перезвоним вам в течении 10 минут
+            <div class="consultation__descr" data-i18n="consultation.description">
+                Just fill out the form
+                and we will call you back within 10 minutes
             </div>
 
             <form id="consultation-form" class="feed-form" action="#">
-                <input name="name" placeholder="Ваше имя" type="text">
-                <input name="phone" placeholder="Ваш телефон" type="tel">
-                <input name="email" placeholder="Ваш E-mail" type="email">
-                <button class="button button_submit">заказать консультацию</button>
+                <input name="name" placeholder="Your name" type="text">
+                <input name="phone" placeholder="Your phone" type="tel">
+                <input name="email" placeholder="Your E-mail" type="email">
+                <button class="button button_submit" data-i18n="consultation.submit_button">Request a consultation</button>
             </form>
         </div>
     </section>
@@ -149,14 +152,14 @@
         </div>
     </section>
 
-    <section class="catalog">
+    <section id="catalog" class="catalog">
         <div class="container">
-            <h2 class="title">Каталог пульсометров</h2>
+            <h2 class="title" data-i18n="catalog.title">Heart Rate Monitor Catalog</h2>
 
             <ul class="catalog__tabs">
-                <li class="catalog__tab catalog__tab_active"><div>Для фитнеса</div></li>
-                <li class="catalog__tab"><div>для бега</div></li>
-                <li class="catalog__tab"><div>для триатлона</div></li>
+                <li class="catalog__tab catalog__tab_active" data-i18n="catalog.tab.fitness"><div>For fitness</div></li>
+                <li class="catalog__tab" data-i18n="catalog.tab.running"><div>For running</div></li>
+                <li class="catalog__tab" data-i18n="catalog.tab.triathlon"><div>For triathlon</div></li>
             </ul>
 
             <div class="catalog__content catalog__fitness catalog__content_active"></div>
@@ -167,70 +170,60 @@
 
     <section class="reviews">
         <div class="container">
-            <h2 class="title">отзывы клиентов</h2>
+            <h2 class="title" data-i18n="reviews.title">Customer Reviews</h2>
 
             <div class="reviews__wrapper">
                 <div class="reviews__item">
+                    <!-- Review 1 -->
                     <div class="reviews__image">
                         <img src="img/reviews/photo_1.png" alt="review image">
                     </div>
-
                     <div class="reviews__text">
-                        <div class="reviews__subtitle">Ирина Иванченко</div>
+                        <div class="reviews__subtitle" data-i18n="review1.name">Emily Smith</div>
+                        <div class="reviews__marathons" data-i18n="review1.marathons">2 half-marathons</div>
+                        <div class="reviews__descr" data-i18n="review1.descr">
+                            I didn't know what to buy, so I turned to the guys from <span></span> - they picked a heart rate monitor that fit my goals and financial possibilities. Later, I decided to update my gadget and went straight back to them.
 
-                        <div class="reviews__marathons">2 полумарафона</div>
+                            New goals - a new gadget!
 
-                        <div class="reviews__descr">
-                            Не знала, что себе купить - обратилась к ребятам из <span>RunSmart</span> - подобрали пульсометр, который подошёл именно под мои цели и финансовые возможности. Через некоторое время решила обновить гаджет - не раздумывая обратилась туда же.
-                            <br>
-                            <br>
-                            Новые цели - новый гаджет!
-                            <br>
-                            <br>
-                            Спасибо, <span>RunSmart</span>!
+                            Thank you, <span>RunSmart</span>!
                         </div>
                     </div>
                 </div>
 
                 <div class="reviews__item">
+                    <!-- Review 2 -->
                     <div class="reviews__image">
                         <img src="img/reviews/photo_2.png" alt="review image">
                     </div>
-
                     <div class="reviews__text">
-                        <div class="reviews__subtitle">Иван Сёмочкин</div>
+                        <div class="reviews__subtitle" data-i18n="review2.name">Oliver Brown</div>
+                        <div class="reviews__marathons" data-i18n="review2.marathons">1 half-marathon</div>
+                        <div class="reviews__descr" data-i18n="review2.descr">
+                            Heart rate monitors are cool! Usually, I ran without them and didn't know I was making it worse.
 
-                        <div class="reviews__marathons">1 полумарафон</div>
+                            Bought one, and also got a training session as a gift. They taught me how to use my new gadget and explained the basics of anatomy, and made a training plan for a month.
 
-                        <div class="reviews__descr">
-                            Крутая штука-пульсометр. Обычно без них бегал. Оказывается только хуже себе делал.
-                            <br>
-                            Купил пульсометр, ещё в подарок получил тренировку. Со мной вместе провели первую тренировку, научили пользоваться новым гаджетом. Также объяснили основы анатомии, составили план тренировок на месяц вперёд.
-                            <br>
-                            <br>
-                            С ними подготовился к своему первому полумарафону! Спасибо!!!
+
+                            With them, I prepared for my first half-marathon! Thanks!!!
                         </div>
                     </div>
                 </div>
 
                 <div class="reviews__item">
+                    <!-- Review 3 -->
                     <div class="reviews__image">
                         <img src="img/reviews/photo_3.png" alt="review image">
                     </div>
-
                     <div class="reviews__text">
-                        <div class="reviews__subtitle">Юлия Дашкина</div>
+                        <div class="reviews__subtitle" data-i18n="review3.name">Charlotte Johnson</div>
+                        <div class="reviews__marathons" data-i18n="review3.marathons">2 half-marathons</div>
+                        <div class="reviews__descr" data-i18n="review3.descr">
+                            I couldn't start running for a long time because I would begin but then it became hard and I gave up. Heard about <span>RunSmart</span> and pulse control running from friends and decided to try.
 
-                        <div class="reviews__marathons">2 полумарафона</div>
+                            I called them, they were interested in my goals and picked a very interesting option with a discount! Now I run and enjoy it! I've already run 2 half-marathons and several shorter races and don't plan to stop.
 
-                        <div class="reviews__descr">
-                            Долго не могла начать бегать, т.к. до этого несколько раз начинала, но становилось тяжело и я бросала. От друзей услышала о <span>RunSmart</span> и о беге с контролем пульса и решила попробовать.
-                            <br>
-                            <br>
-                            Позвонила, ребята поинтересовались моими целями и подобрали очень интересный вариант со скидкой! Теперь бегаю и наслаждаюсь бегом! Пробежала уже 2 полумарафона и несколько более коротких забегов и не намерена останавливаться!
-                            <br>
-                            <br>
-                            Спасибо!!!
+                            Thank you!!!
                         </div>
                     </div>
                 </div>
@@ -240,12 +233,12 @@
 
     <footer class="footer">
         <div class="footer__map">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2244.4303078892794!2d37.6444210771158!3d55.76839799078955!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54a636edcd2ad%3A0x4c2ca101e2c8c617!2sMyasnitskiy%20Proyezd%2C%204%2F3%2C%20Moskva%2C%20Russia%2C%20107078!5e0!3m2!1sen!2sam!4v1701257134406!5m2!1sen!2sam" width="100%" height="630" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1603638.6423002454!2d-93.46425991952285!3d38.277018842911446!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87c0e6d54822e37d%3A0xb55bc4590466bd72!2sMissouri%2C%20USA!5e0!3m2!1sen!2sam!4v1701873395051!5m2!1sen!2sam" width="100%" height="630" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
 
         <div class="footer__info">
-            <address class="footer__addr">Москва, Мясницкий проезд, д.3с1</address>
-            <a href="tel:+84999228974" class="footer__phone">8 (499) 922-89-74</a>
+            <address class="footer__addr">Missouri, USA</address>
+            <a href="tel:+14173333333" class="footer__phone">+1 (417) 333-3333</a>
             <div class="footer__social">
                 <a class="footer__social-item">
                     <img src="icons/footer/facebook.svg" alt="facebook">
@@ -263,32 +256,32 @@
     <div class="overlay">
         <div class="customModal" id="consultation">
             <div class="customModal__close">&times;</div>
-            <div class="customModal__subtitle">Просто заполните форму заявки</div>
-            <div class="customModal__descr">и мы перезвоним вам в течении 10 минут</div>
+            <div class="customModal__subtitle" data-i18n="modal.consultation_subtitle">Just fill out the application form</div>
+            <div class="customModal__descr" data-i18n="modal.consultation_description">and we will call you back within 10 minutes</div>
             <form class="feed-form feed-form_mt25" action="#">
-                <input name="name" placeholder="Ваше имя" type="text">
-                <input name="phone" placeholder="Ваш телефон" type="tel">
-                <input name="email" placeholder="Ваш E-mail" type="email">
-                <button class="button button_submit">заказать консультацию</button>
+                <input name="name" placeholder="Your name" type="text">
+                <input name="phone" placeholder="Your phone" type="tel">
+                <input name="email" placeholder="Your E-mail" type="email">
+                <button class="button button_submit" data-i18n="modal.consultation_button">Request a consultation</button>
             </form>
         </div>
 
         <div class="customModal" id="order">
             <div class="customModal__close">&times;</div>
-            <div class="customModal__subtitle">Ваш заказ:</div>
+            <div class="customModal__subtitle" data-i18n="modal.order_subtitle">Your order:</div>
             <div class="customModal__descr"></div>
             <form class="feed-form feed-form_mt25" action="#">
-                <input name="name" placeholder="Ваше имя" type="text">
-                <input name="phone" placeholder="Ваш телефон" type="tel">
-                <input name="email" placeholder="Ваш E-mail" type="email">
-                <button data-modal="order" class="button button_submit">купить</button>
+                <input name="name" placeholder="Your name" type="text">
+                <input name="phone" placeholder="Your phone" type="tel">
+                <input name="email" placeholder="Your E-mail" type="email">
+                <button data-modal="order" class="button button_submit" data-i18n="modal.order_button">Purchase</button>
             </form>
         </div>
 
         <div class="customModal customModal_mini" id="thanks">
             <div class="customModal__close">&times;</div>
-            <div class="customModal__subtitle">Спасибо за вашу заявку!</div>
-            <div class="customModal__descr">Наш менеджер свяжется с вами в ближайшее время!</div>
+            <div class="customModal__subtitle" data-i18n="modal.thanks_subtitle">Thank you for your application!</div>
+            <div class="customModal__descr" data-i18n="modal.thanks_description">Our manager will contact you soon!</div>
         </div>
     </div>
 
