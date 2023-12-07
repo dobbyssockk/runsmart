@@ -288,8 +288,7 @@ document.addEventListener('DOMContentLoaded', () => {
         $(form).validate({
             rules: {
                 name: {
-                    required: true,
-                    minlength: 2
+                    required: true
                 },
                 phone: {
                     required: true,
@@ -301,14 +300,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             },
             messages: {
-                name: {
-                    required: 'Пожалуйста, введите свое имя.',
-                    minlength: jQuery.validator.format('Введите {0} символа!')
-                },
-                phone: 'Пожалуйста, введите свой номер телефона.',
+                name: 'Please enter your name.',
+                phone: 'Please enter your phone number.',
                 email: {
-                    required: 'Пожалуйста, введите свою почту.',
-                    email: 'Неправильный формат электронной почты.'
+                    required: 'Please enter your email.',
+                    email: 'Invalid email format.'
                 }
             },
         });
