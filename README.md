@@ -6,6 +6,17 @@ This landing page showcases my web development skills, featuring responsive desi
 ## Access
 The landing page is currently live and can be accessed at the following URL: https://dobbyssockk.github.io/.
 
+### Important Notes
+Please note that due to the limitations of GitHub Pages, certain features, such as the server-side part of the mailing service, will not work on GitHub Pages. This is because GitHub Pages supports only static hosting and cannot execute server-side code, such as Node.js, which is used in my project.
+
+## Local Installation
+To fully utilize all the features of the project, including the mailing service, you will need to install the project locally. Here are the instructions to do so:
+
+1. Clone the repository using `git clone https://github.com/dobbysockk/dobbysockk.github.io.git`.
+2. Navigate to the project directory with the command `cd dobbyssockk.github.io`.
+3. Install all dependencies by running `npm install`.
+4. To start the server, use the command `npm run start-server`.
+
 ## Project Structure  
 - `dist/`: Contains the distribution files that are ready for deployment to the production environment.
 - `src/`: Source code of the project.
@@ -16,10 +27,10 @@ The landing page is currently live and can be accessed at the following URL: htt
   - `js/`: JavaScript files including libraries like jQuery and custom scripts.
   - `mailer/`: Contains scripts for handling email sending functionality.
   - `sass/`: SASS files that compile down to CSS, organized into `base` and `blocks` for modularity.
+  - `index.html`: The main entry point HTML file for the landing page.
 - `translations/`: JSON files for internationalization, providing support for multiple languages including English (`en.json`), Armenian (`am.json`), Ukrainian (`ua.json`), and Russian (`ru.json`).
 - `.gitignore`: Specifies intentionally untracked files to ignore.
 - `gulpfile.js`: Gulp tasks for automating the development and build process.
-- `index.html`: The main entry point HTML file for the landing page.
 - `package.json` & `package-lock.json`: List the project dependencies and lock down their versions, respectively.
 - `README.md`: A markdown file with information about the project.
 
