@@ -1,4 +1,4 @@
-# Project Name: Pulse
+# Project Name: RunSmart
 
 ## Description  
 This landing page showcases my web development skills, featuring responsive design, CSS preprocessing with SASS, and the use of JavaScript libraries. The site is accessible in multiple languages, specifically English, Armenian, Ukrainian, and Russian, demonstrating a commitment to internationalization and making the content available to a diverse audience.
