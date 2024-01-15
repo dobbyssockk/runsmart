@@ -4,7 +4,7 @@
 This landing page showcases my web development skills, featuring responsive design, CSS preprocessing with SASS, and the use of JavaScript libraries. The site is accessible in multiple languages, specifically English, Armenian, Ukrainian, and Russian, demonstrating a commitment to internationalization and making the content available to a diverse audience.
 
 ## Access
-The landing page is currently live and can be accessed at the following URL: https://dobbyssockk.github.io/.
+The landing page is currently live and can be accessed at the following URL: https://dobbyssockk.github.io/runsmart/.
 
 ### Important Notes
 Please note that due to the limitations of GitHub Pages, certain features, such as the server-side part of the mailing service, will not work on GitHub Pages. This is because GitHub Pages supports only static hosting and cannot execute server-side code, such as Node.js, which is used in my project.
@@ -12,8 +12,8 @@ Please note that due to the limitations of GitHub Pages, certain features, such 
 ## Local Installation
 To fully utilize all the features of the project, including the mailing service, you will need to install the project locally. Here are the instructions to do so:
 
-1. Clone the repository using `git clone https://github.com/dobbysockk/dobbysockk.github.io.git`.
-2. Navigate to the project directory with the command `cd dobbyssockk.github.io`.
+1. Clone the repository using `git clone https://github.com/dobbyssockk/runsmart.git`.
+2. Navigate to the project directory with the command `cd runsmart`.
 3. Install all dependencies by running `npm install`.
 4. To start the server, use the command `npm run start-server`.
 
