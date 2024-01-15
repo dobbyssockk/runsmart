@@ -1,6 +1,6 @@
 # Project Name: RunSmart
 
-## Description  
+## Description
 This landing page showcases my web development skills, featuring responsive design, CSS preprocessing with SASS, and the use of JavaScript libraries. The site is accessible in multiple languages, specifically English, Armenian, Ukrainian, and Russian, demonstrating a commitment to internationalization and making the content available to a diverse audience.
 
 ## Access
@@ -12,12 +12,12 @@ Please note that due to the limitations of GitHub Pages, certain features, such 
 ## Local Installation
 To fully utilize all the features of the project, including the mailing service, you will need to install the project locally. Here are the instructions to do so:
 
-1. Clone the repository using `git clone https://github.com/dobbysockk/dobbysockk.github.io.git`.
-2. Navigate to the project directory with the command `cd dobbyssockk.github.io`.
+1. Clone the repository using `git clone https://github.com/dobbyssockk/runsmart.git`.
+2. Navigate to the project directory with the command `cd runsmart`.
 3. Install all dependencies by running `npm install`.
 4. To start the server, use the command `npm run start-server`.
 
-## Project Structure  
+## Project Structure
 - `dist/`: Contains the distribution files that are ready for deployment to the production environment.
 - `src/`: Source code of the project.
   - `css/`: Contains compiled CSS files including third-party libraries like Bootstrap and Slick, and custom styles.
@@ -34,7 +34,7 @@ To fully utilize all the features of the project, including the mailing service,
 - `package.json` & `package-lock.json`: List the project dependencies and lock down their versions, respectively.
 - `README.md`: A markdown file with information about the project.
 
-## Technologies  
+## Technologies
 - HTML5
 - SASS/CSS3
 - JavaScript
