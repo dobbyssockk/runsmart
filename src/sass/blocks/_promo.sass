@@ -1,7 +1,18 @@
 .promo
+  position: relative
   min-height: 650px
   padding: 21px 0 93px 0
-  background: url("../img/main/main_bg.png") center (center/cover) no-repeat
+  background: url("../img/main/main_bg.webp") center (center/cover) no-repeat
+  &::before
+    content: '' /* This is necessary for a pseudo-element */
+    display: block
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    background: rgba(0, 0, 0, 0.5) /* Semi-transparent black overlay */
+    z-index: 0 /* Ensure it's behind the content */
   &__wrapper
     display: flex
     flex-direction: column
@@ -50,3 +61,6 @@
       text-transform: uppercase
       text-decoration: underline
 
+.promo > *
+  position: relative
+  z-index: 1
